@@ -9,7 +9,8 @@ describe('Create student use case', () => {
     const response = await createStudent.execute({
       name: 'Leonardo Gomes Assunção',
       address: 'Av. Santos Ferreira, 4330',
-      phoneNumber: '51988888888'
+      phoneNumber: '51988888888',
+      avatarUrl: null
     });
 
     const student = await studentsRepository.findById(response.id);

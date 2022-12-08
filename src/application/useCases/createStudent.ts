@@ -3,9 +3,9 @@ import { StudentRepository } from '../repositories/StudentsRepository';
 
 export type CreateStudentRequest = {
   name: string;
-  address: string;
-  avatarUrl?: string;
-  phoneNumber: string;
+  address: string | null;
+  avatarUrl: string | null;
+  phoneNumber: string | null;
 }
 
 export class CreateStudent {
@@ -24,7 +24,8 @@ export class CreateStudent {
       name,
       address,
       phoneNumber,
-      avatarUrl
+      avatarUrl,
+      createdAt: new Date()
     });
 
     await this.studentRepository.save(student);
