@@ -5,10 +5,9 @@
   "author": "Leonardo Assunção <leonardoassuncao12235@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/src/server.js",
-    "postinstall": "prisma generate",
-    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
-    "build": "tsc",
+    "start": "node index.js",
+    "postinstall": "prisma generate && tsc",
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules index.ts",
     "test": "jest"
   },
   "dependencies": {
