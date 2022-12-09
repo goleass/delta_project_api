@@ -1,0 +1,17 @@
+{
+  "name": "delta-project-api",
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/server.ts"
+    }
+  ]
+}
