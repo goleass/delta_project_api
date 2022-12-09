@@ -8,6 +8,12 @@ export class InMemoryStudentsRepository implements StudentRepository {
     this.items.push(student);
   }
 
+  async findAll(): Promise<Student[] | []> {
+    const students = this.items;
+
+    return students;
+  }
+
   async findById(id: string): Promise<Student | null> {
     const student =  this.items.find(student => student.id === id);
 
@@ -16,5 +22,18 @@ export class InMemoryStudentsRepository implements StudentRepository {
     }
 
     return student;
+  }
+
+  async delete(id: string): Promise<void> {
+    this.items = this.items.filter(student => student.id !== id);
+  }
+
+  async update(student: Student): Promise<void> {
+    this.items = this.items.map(studentRepo => {
+      if(student.id === studentRepo.id) {
+        return Student.create(student.props, student.id);
+      }
+      return studentRepo;
+    });
   }
 }

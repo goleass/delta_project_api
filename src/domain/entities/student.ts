@@ -5,7 +5,7 @@ type StudentProps = {
   address: string | null;
   avatarUrl: string | null;
   phoneNumber: string | null;
-  createdAt: Date;
+  createdAt?: Date;
 }
 
 export class Student extends Entity<StudentProps> {

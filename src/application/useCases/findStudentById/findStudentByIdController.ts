@@ -1,24 +1,24 @@
 import { Request, Response } from 'express';
-import { CreateStudent } from './createStudent';
+import { FindStudentByIdUseCase } from './findStudentByIdUseCase';
 
-export class CreateStudentController {
+export class FindStudentByIsController {
   constructor(
-    private createStudent: CreateStudent
+    private findStudentById: FindStudentByIdUseCase
   ) { }
 
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { name, address, phoneNumber, avatarUrl } = request.body;
+      const id = request.query.id;
 
-      if (!name) {
+      if ((!id || typeof (id) !== 'string')) {
         return response.status(400).json({
           message: 'Preencha os campos requeridos.'
         });
       }
 
-      await this.createStudent.execute({ name, address, phoneNumber, avatarUrl });
+      const student = await this.findStudentById.execute(id);
 
-      return response.status(201).send();
+      return response.status(200).json(student);
     } catch (error) {
       console.log(error);
       return response.status(500).json({

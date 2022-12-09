@@ -1,5 +1,5 @@
-import { Student } from '../../domain/entities/student';
-import { StudentRepository } from '../repositories/StudentsRepository';
+import { Student } from '../../../domain/entities/student';
+import { StudentRepository } from '../../repositories/StudentsRepository';
 
 export type CreateStudentRequest = {
   name: string;
@@ -8,7 +8,7 @@ export type CreateStudentRequest = {
   phoneNumber: string | null;
 }
 
-export class CreateStudent {
+export class CreateStudentUseCase {
   constructor(
     private studentRepository: StudentRepository
   ) { }
