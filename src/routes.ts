@@ -1,7 +1,12 @@
 import { Router } from 'express';
+import { request } from 'https';
 import { createStudentController, deleteStudentController, findStudentByIsController, showAllStudentsController, updateStudentController } from './application/useCases';
 
 const router = Router();
+
+router.get('/', (request, response) => {
+  return response.send('ok');
+});
 
 router.get('/students', (request, response) => {
   return showAllStudentsController.handle(request, response);
