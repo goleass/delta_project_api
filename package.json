@@ -1,11 +1,11 @@
 {
   "name": "delta_project_api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Leonardo Assunção <leonardoassuncao12235@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node dist/index.js",
     "postinstall": "prisma generate && tsc",
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules index.ts",
     "test": "jest"
