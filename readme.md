@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/goleass/delta_project_api#readme)
 
 
-### ✨ [Demo](https://delta-project-api.vercel.app)
+### ✨ [Demo](https://delta-project-api.vercel.app/students)
 
 # Getting started
 
