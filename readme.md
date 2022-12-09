@@ -27,7 +27,6 @@ populate it with the url of your database
 ```
 DATABASE_URL="postgresql://<username>:<password>@<host_name>:<port>/<database_name>?schema=public"
 ```
-
 ### Run the project locally
 
 run `npm run dev`
@@ -39,25 +38,25 @@ run `npm run dev`
 ### Format the Prisma schema
 
 ```bash
-npm run prisma:format
+npx prisma format
 ```
 
 ### Migrate the SQL schema
 
 ```bash
-prisma migrate dev
+npx prisma migrate dev
 ```
 
 ### Update the Prisma Client
 
 ```bash
-npm run prisma:generate
+npx prisma generate
 ```
 
 ### Launch Prisma Studio
 
 ```bash
-npm run prisma:studio
+npx prisma studio
 ```
 
 ## Run tests
